@@ -29,7 +29,7 @@ This repository currently provides the implementation for the **multiple-choice 
 Clone the repository:
 
 ```bash
-git clone https://github.com/Lijiaqian1/SVF.git
+git clone https://github.com/lab-flair/SVF.git
 cd SVF
 ```
 
