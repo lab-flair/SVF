@@ -14,6 +14,10 @@ Jiaqian Li, Yanshu Li, and Kuan-Hao Huang
 
 ## Overview
 
+<p align="center">
+  <img src="svf_pipeline.png" width="850">
+</p>
+
 Steering vectors provide a lightweight way to control large language models at inference time by modifying their hidden representations. Most existing methods, however, use a fixed steering direction across different inputs.
 
 We introduce **Steering Vector Fields (SVF)**, which learns a differentiable concept function over hidden representations and uses its local gradient as an input-dependent steering direction. This allows the intervention direction to adapt to the current context.
@@ -22,10 +26,8 @@ SVF further performs coordinated multi-layer steering through a shared represent
 
 This repository currently provides the implementation for the **multiple-choice question (MCQ) setting** used in our experiments. Implementations for additional settings are coming soon.
 
-<p align="center">
-  <img src="svf_pipeline.png" width="850">
-</p>
----
+
+
 
 ## Setup
 
