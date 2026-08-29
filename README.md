@@ -76,11 +76,9 @@ $$
 
 The corresponding context-dependent steering direction is obtained from the local gradient
 
-$$
-v_{\mathrm{SVF}}(h_l, l)
-=
-\nabla_{h_l} F(h_l, l).
-$$
+```math
+v_{\mathrm{SVF}}(h_l, l) = \nabla_{h_l} F(h_l, l)
+```
 
 As a result, the steering direction changes according to the current hidden representation rather than remaining fixed across inputs.
 
