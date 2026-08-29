@@ -1,0 +1,43 @@
+seed: 42
+
+model:
+  name: meta-llama/Llama-2-7b-chat-hf
+  cache_dir: ./models/llama2
+  dtype: float16
+  device_map: auto
+
+build:
+  repo_id: Anthropic/model-written-evals
+  source: aarisk
+  categories: ["wealth"]
+  train_split: train
+  val_split: validation
+  per_category_max_train: 500
+  per_category_max_val: 500
+
+shared_vfc:
+  layers: [15, 16, 17, 18, 19, 20, 21, 22, 23, 24]   
+  r: 64                                  
+  norm_type: rms                         # "rms" | "layernorm"
+  film_de: 8                             # layer embedding dim
+  pca_init: true                         
+  batch_collect: 4
+  out_dir: ./artifacts/shared_bndry/wealth
+
+
+mlp:
+  hidden: 64
+  layers: 1
+  dropout: 0.0
+
+train:
+  lr: 3.0e-4
+  weight_decay: 1.0e-2
+  epochs: 5
+  batch_size: 1024
+  patience: 5
+  grad_clip: 1.0
+
+sigma_g:
+  max_samples_per_layer: 2048
+

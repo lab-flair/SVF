@@ -1,0 +1,42 @@
+seed: 42
+
+model:
+  name: meta-llama/Llama-2-7b-chat-hf
+  cache_dir: ./models/llama2
+  dtype: float16
+  device_map: auto
+  use_cache: false
+
+dataset:
+  name: mwe_persona
+
+  split: test
+  max_data_num: 500
+  use_instruction: true
+  repo_id: Anthropic/model-written-evals
+  source: aarisk
+  categories: ["wealth"]
+
+inference:
+  max_examples: 500
+
+mlp:
+  hidden: 64
+  layers: 1
+  dropout: 0.0
+
+vfc:
+  enable: true
+
+  shared_boundary_path: ./artifacts/shared_bndry/wealth/shared_boundary.pt
+
+  layers: [15,16,17,18]
+  top_k: 4
+
+  
+  alpha: 200
+  margin_gate: 0.0
+
+  calibration:
+    enable: true
+    calib_num: 

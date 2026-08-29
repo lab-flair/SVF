@@ -1,0 +1,26 @@
+seed: 42
+
+model:
+  name: meta-llama/Llama-2-7b-chat-hf
+  cache_dir: ./models/llama2
+  dtype: float16
+  device_map: auto
+
+dataset:
+  name: mwe_persona
+  split: test
+  max_data_num: 500
+  use_instruction: true
+  repo_id: Anthropic/model-written-evals
+  source: aarisk
+  categories: ["wealth"]
+
+inference:
+  max_examples: 500
+
+steer:
+  enable: true
+  layer: 15
+  v_md_path: ./artifacts/caa/caa_wealth_L15/v_md.pt
+  sigma_path: ./artifacts/caa/caa_wealth_L15/sigma.pt
+  alpha: 8               
