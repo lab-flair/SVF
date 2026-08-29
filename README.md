@@ -22,6 +22,9 @@ SVF further performs coordinated multi-layer steering through a shared represent
 
 This repository currently provides the implementation for the **multiple-choice question (MCQ) setting** used in our experiments. Implementations for additional settings are coming soon.
 
+<p align="center">
+  <img src="svf_pipeline.png" width="850">
+</p>
 ---
 
 ## Setup
